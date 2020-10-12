@@ -6,17 +6,18 @@ a)  Beschreibe in wenigen Sätzen, wie du in einem (großen) Speicher an
 
     Lösung:
 
-    Nimm das Ding, das sich genau in der Mitte des betrachteten Speichers
-    befindet.
-    Vergleiche das Ding mit dem Gesuchten:
-       - stimmt es überein --> Ende,
-       - ist es kleiner als das Gesuchte, dann betrachte nur noch die obere
-         Hälfte des bisher betrachteten Speichers,
-       - ist es größer als das Gesuchte, dann betrachte nur noch die untere
-         Hälfte des bisher betrachteten Speichers.
-    Wiederhole, solange noch Dinge übrig sind.
-    Ist nichts mehr übrig, gibt es das gesuchte Ding nicht in der Menge.
-       --> Abbruch
+    Wiederhole, solange mehr als ein Dinge im betrachteten Speicher ist:
+        Nimm das Ding, das sich genau in der Mitte des betrachteten Speichers
+        befindet (oder  bei gerader Anzahl das direkt oberhalb der Mitte).
+        Ist das Ding kleiner oder gleich dem Gesuchten:
+            dann betrachte nur noch die obere Hälfte des bisher betrachteten Speichers
+            (inkl. der gewählten "Mitte"),
+        Sonst:
+            betrachte nur noch die untere Hälfte des bisher betrachteten Speichers
+            (ohne die gewählte "Mitte").
+    Ist das Ding gleich dem Gesuchten:
+        Gib es zurück --> Ende.
+    Es gibt das gesuchte Ding nicht in der Menge --> Abbruch.
 
 
 b)  Schreibe eine Funktion, die den Algorithmus von a) für Zahlen in einer
@@ -52,18 +53,20 @@ such_iterationen = 0
 def suche_binaer(liste, element):
     global such_iterationen
     such_iterationen = 1
-    unten, oben = 0, len(liste)
+    anfang = 0
+    ende = len(liste)
 
-    while oben!=unten:
-        mitte = math.floor((oben+unten)/2)
-        if liste[mitte] == element:
-            return mitte
-        elif liste[mitte] > element:
-            oben = mitte
+    while ende-anfang > 1:
+        mitte = math.floor((anfang+ende)/2)
+        if liste[mitte] <= element:
+            anfang = mitte
         else:
-            unten = mitte+1
+            ende = mitte
         such_iterationen += 1
+    if liste[anfang] == element:
+        return anfang
     raise ValueError("{} ist nicht in der Liste".format(element))
+
 
 test_name = "Erstes Element"
 print("Test {}: Start".format(test_name))
@@ -73,7 +76,8 @@ such_element = 0
 
 such_index = suche_binaer(test_liste, such_element)
 
-assert(test_liste[such_index] == such_element)
+assert test_liste[such_index] == such_element, "test_liste[{}] ist {}, und nicht {}".format(
+    such_index, test_liste[such_index], such_element)
 
 print("{}[{}] == {}".format(test_liste, such_index, such_element))
 print("Test {}: Ende".format(test_name))
@@ -87,7 +91,8 @@ such_element = 5
 
 such_index = suche_binaer(test_liste, such_element)
 
-assert(test_liste[such_index] == such_element)
+assert test_liste[such_index] == such_element, "test_liste[{}] ist {}, und nicht {}".format(
+    such_index, test_liste[such_index], such_element)
 
 print("{}[{}] == {}".format(test_liste, such_index, such_element))
 print("Test {}: Ende".format(test_name))
@@ -97,11 +102,12 @@ test_name = "n-tes Element"
 print("Test {}: Start".format(test_name))
 
 test_liste = [0, 3, 4, 7, 10, 15]
-such_element = 7
+such_element = 10
 
 such_index = suche_binaer(test_liste, such_element)
 
-assert(test_liste[such_index] == such_element)
+assert test_liste[such_index] == such_element, "test_liste[{}] ist {}, und nicht {}".format(
+    such_index, test_liste[such_index], such_element)
 
 print("{}[{}] == {}".format(test_liste, such_index, such_element))
 print("Test {}: Ende".format(test_name))
@@ -116,6 +122,7 @@ such_element = 16
 such_index = None
 try:
     such_index = suche_binaer(test_liste, such_element)
+    assert false, "Die Suche hat keinen Abbruch erzeugt"
 except ValueError:
     pass
 

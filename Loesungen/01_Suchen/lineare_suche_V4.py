@@ -6,12 +6,10 @@ a)  Beschreibe in wenigen Sätzen, wie du in einem (großen) Speicher mit
 
     Lösung:
 
-    Nimm das erste Ding.
-    Solange das Ding nicht mit dem gesuchten übereinstimmt: nimm das nächste.
-    Wenn kein Ding mehr vorhanden, dann gibt es das gesuchte Ding nicht in der
-        gegebenen Menge. --> Abbruch
-    Das aktuelle Ding ist das Gesuchte. --> Ende
-
+    Nimm der Reihe nach alle Dinge:
+        Wenn das das Ding mit dem gesuchten übereinstimmt:
+            Gib es zurück --> Ende.
+    Das gesuchte Ding ist nicht in der Liste --> Abbruch.
 
 b)  Schreibe eine Funktion, die den Algorithmus von a) für Zahlen in einer
     Liste erfüllt.
@@ -40,16 +38,10 @@ d)  Ermittle für die Suche eines beliebigen Elements aus einer zufällig
 
 import random
 
-such_iterationen = 0
-
 def suche_linear(liste, element):
-    global such_iterationen
-    such_iterationen = 1
-    
     for index in range(len(liste)):
         if liste[index] == element:
             return index
-        such_iterationen += 1
         
     raise ValueError("{} ist nicht in der Liste".format(element))
 
@@ -113,28 +105,5 @@ print("Test {}: Ende".format(test_name))
 print("*******************************************************")
 
 
-print("Ab hier Zusatzaufgaben...")
-
-def erzeuge_test_liste(anzahl, groesse):
-    return random.sample(list(range(groesse)), anzahl)
-
-def waehle_element_aus_liste(liste):
-    return random.choice(liste)
-
-def durchschnitt_anzahl_iterationen(anzahl_daten,
-                                    maximale_groesse, anzahl_versuche):
-    anzahl_iterationen = 0
-    for _ in range(anzahl_versuche):
-        test_daten = erzeuge_test_liste(anzahl_daten, maximale_groesse)
-        suche_linear(test_daten, waehle_element_aus_liste(test_daten))
-        anzahl_iterationen += such_iterationen
-    return anzahl_iterationen/anzahl_versuche
-
-_anzahl_versuche = 10
-_groesse_der_zahlen = 100000
-
-print("Durchschnittliche Anzahl an Iterationen bei verschieden Listengrößen")
-print({i:durchschnitt_anzahl_iterationen(i, _groesse_der_zahlen,
-                                         _anzahl_versuche)
-                                for i in [10, 20, 40, 80]})
+# print("Ab hier Zusatzaufgaben...")
 
