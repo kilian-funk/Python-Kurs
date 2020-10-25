@@ -9,7 +9,7 @@ https://www.python-lernen.de/if-abfrage-python.htm
 """
 
 # benutzer_eingabe = input("Hast du heute Geburtstag? ")
-# 
+#
 # if # hier darfst du weiter schreiben
 
 """
@@ -20,9 +20,9 @@ multipliziere sie mit 2, wenn sie ungerade ist mit 3. Gib das Ergebnis aus.
 """
 
 # benutzer_eingabe = input("Nenne mir eine Zahl: ")
-# 
+#
 # ist_gerade = benutzer_eingabe % 2
-# 
+#
 # if # hier darfst du weiter schreiben
 
 """
@@ -38,14 +38,15 @@ https://www.python-lernen.de/for-schleife.htm
 """
 
 # zahlen = [ 3, 9, 4, 6 ]
-# 
+#
 # for i in zahlen:
 #     # hier darfst du weiter schreiben
-    
+
 """
 Übung 04: for-Schleife
 
-Multipliziere die Zahlen von 0 bis 10 jeweils mit in einer eigenen Zeile aus.
+Multipliziere die Zahlen von 0 bis 10 jeweils mit 3. Gib das Ergebnis in
+einer eigenen Zeile aus.
 Verwende die Funktion range().
 """
 
@@ -61,7 +62,7 @@ ausgibt.
 """
 
 # liste = [ wert*wert for wert in [ 3, 9, 4, 7] ]
-# 
+#
 # print(liste)
 
 
@@ -78,18 +79,19 @@ Nutze die folgende Seite, wenn du Hilfe brauchst:
 https://www.python-lernen.de/while-schleife.htm
 """
 # import random
-# 
+#
 # gesuchte_zahl = random.choice(range(1,6))
-# 
+#
 # erraten = False
 # while erraten:
 #     # hier kannst du weiter schreiben
-#     
+#
 
 """
 Übung 07: Funktionen
 
-Schreibe eine Funktion die eine Zahl als Argument nimmt und dies ausgibt.
+Schreibe eine Funktion die eine Zahl als Argument nimmt und diese auf den
+Bildschirm ausgibt.
 
 Rufe diese Funktion mit den Zahlen 0 bis 10 auf.
 
@@ -99,4 +101,4 @@ https://www.python-lernen.de/funktionen-in-python.htm
 
 # def ausgabe(zahl):
 #     # hier darfst du weiter schreiben
-# 
+#
