@@ -41,5 +41,7 @@ https://www.python-lernen.de/for-schleife.htm
 
 
 ## Programmteile wiederverwenden durch Funktionen
-Oft möchte man bestimmte Programmteile wiederverwenden, wie z. B. einen Suchalgorithmus. Hierfür nutzt man Funktionsdefinitionen. An einer Stelle wird der wiederzuverwendende Code definiert (Schlüsselwort def). Hierbei können auch Argumente festgelegt werden. Das sind Daten, die die Funktion benötigt, um richtig zu funktionieren. An anderer Stelle kann die Funktion dann aufgerufen werden. Details unter:
+Oft möchte man bestimmte Programmteile wiederverwenden, wie z. B. einen Suchalgorithmus. Hierfür nutzt man Funktionsdefinitionen. An einer Stelle wird der wiederzuverwendende Code definiert (Schlüsselwort def). Hierbei können auch Argumente festgelegt werden. Das sind Daten, die die Funktion benötigt, um richtig zu funktionieren. An anderer Stelle kann die Funktion dann aufgerufen werden.
+
+Details unter:
 http://www.python-lernen.de/funktionen-in-python.htm

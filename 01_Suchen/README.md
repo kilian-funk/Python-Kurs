@@ -22,17 +22,3 @@ Der Mittelwert ist ein Begriff aus der Statistik. Er bezeichnet eine zentrale Te
 Der Mittelwert ist dann
 
   x_mittel = (_x_<sub>1</sub> + _x_<sub>2</sub> + ... + _x<sub>n</sub>_) / _n_
-
-## Lesematerial
-
-### Programmablauf strukturieren
-Mithilfe der folgenden Sprachelemente lässt sich der Programmablauf steuern. Damit sind nicht nur einfache Algorithmen möglich, bei denen ein Schritt nach dem anderen passiert, sondern es können Verzweigungen oder Wiederholungen ausgedrückt werden.
-
-**if-Bedingung** \
-https://www.python-lernen.de/if-abfrage-python.htm
-
-**while-Schleife** \
-https://www.python-lernen.de/while-schleife.htm
-
-**for-Schleife** \
-https://www.python-lernen.de/for-schleife.htm

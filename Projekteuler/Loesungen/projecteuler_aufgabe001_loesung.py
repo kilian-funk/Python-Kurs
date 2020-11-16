@@ -15,8 +15,8 @@ for i in range(1,1000):
         summe += i
 print(summe)
 
-# Kompakt und elegant mit "list comrehensions"
-summe = sum([i for i in range(1,1000) if i % 3 ==0 or i % 5 == 0])
+# Kompakt und elegant mit "generator comrehensions"
+summe = sum(i for i in range(1,1000) if i % 3 ==0 or i % 5 == 0)
 print(summe)
 
 # Auch sehr elegant mit der Vereinigung von Mengen
