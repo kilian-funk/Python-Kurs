@@ -1,31 +1,31 @@
 from enum import Enum
 
 class Pos(Enum):
-    OBEN_LINKS = 0
-    OBEN_MITTE = 1
-    OBEN_RECHTS = 2
-    MITTE_LINKS = 3
-    MITTE_MITTE = 4
-    MITTE_RECHTS = 5
-    UNTEN_LINKS = 6
-    UNTEN_MITTE = 7
-    UNTEN_RECHTS = 8
+    OBEN_LINKS = "oben links"
+    OBEN_MITTE = "oben mitte"
+    OBEN_RECHTS = "oben rechts"
+    MITTE_LINKS = "mitte links"
+    MITTE_MITTE = "mitte mitte"
+    MITTE_RECHTS = "mitte rechts"
+    UNTEN_LINKS = "unten links"
+    UNTEN_MITTE = "unten mitte"
+    UNTEN_RECHTS = "unten rechts"
     
 
 class Belegung(Enum):
-    FREI = 0
-    KREIS = 1
-    KREUZ = 2
+    FREI = "Frei"
+    KREIS = "Kreis"
+    KREUZ = "Kreuz"
 
 
 class Zustand(Enum):
-    OK = 0
-    NICHT_ERLAUBT = -1
-    KREUZ_GEWINNT = 1
-    KREIS_GEWINNT = 2
-    UNENTSCHIEDEN = 3
-    KREIS_IST_AM_ZUG = 4
-    KREUZ_IST_AM_ZUG = 5
+    OK = "Alles in Ordnung."
+    NICHT_ERLAUBT = "Der Zug ist nicht erlaubt."
+    KREUZ_GEWINNT = "Das Spiel ist beendet. Kreuz gewinnt!"
+    KREIS_GEWINNT = "Das Spiel ist beendet. Kreis gewinnt!"
+    UNENTSCHIEDEN = "Das Spiel ist beendet. Unentschieden!"
+    KREIS_IST_AM_ZUG = "Kreis ist am Zug."
+    KREUZ_IST_AM_ZUG = "Kreuz ist am Zug."
     
     
 class TicTacToe:

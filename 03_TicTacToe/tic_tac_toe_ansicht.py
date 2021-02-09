@@ -1,10 +1,18 @@
 from turtle import *
 from tic_tac_toe_modell import Pos, Zustand, Belegung
+import time
 
 class Ansicht():
     
     def zeichne_spielfeld(self):
         print("Neues leeres Spielfeld...")
+        stift = Turtle()
+        time.sleep(2)
+
+        stift.forward(200)
+        stift.left(90)
+        stift.dot(20)
+
         
     def loesche_spielfeld(self):
         print("Spielfeld wird geloescht")
@@ -13,16 +21,7 @@ class Ansicht():
         print(f"{art} an {position} gesetzt")
         
     def berichte_zustand(self, zustand):
-        zustands_meldung = {
-            Zustand.OK: "Alles in Ordnung",
-            Zustand.NICHT_ERLAUBT: "Zug ist nicht erlaubt",
-            Zustand.KREUZ_GEWINNT: "Das Spiel ist beendet. Kreuz gewinnt!",
-            Zustand.KREIS_GEWINNT: "Das Spiel ist beendet. Kreis gewinnt!",
-            Zustand.UNENTSCHIEDEN: "Das Spiel endet unentschieden.",
-            Zustand.KREIS_IST_AM_ZUG: "Kreis ist am Zug.",
-            Zustand.KREUZ_IST_AM_ZUG: "Kreuz ist am Zug.",
-        }
-        print(zustands_meldung[zustand])
+        print(zustand.value)
         
         
     def position_aus_eingabe(geraete_pos):
